@@ -2,6 +2,7 @@ package com.example.user.weekoneday4;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -60,7 +61,7 @@ public class emu extends AppCompatActivity {
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                         progress_value = i;
-                        txtView.setText("" + i + "");
+                        txtView.setText(i + "%");
 
                     }
 
@@ -73,7 +74,8 @@ public class emu extends AppCompatActivity {
                     @Override
                     public void onStopTrackingTouch(SeekBar seekBar) {
 
-
+                       rate = progress_value;
+                        txtView.setText(progress_value+"%");
 
 
                     }
@@ -81,8 +83,25 @@ public class emu extends AppCompatActivity {
 
         );
 
-
+// EMI = [P x R x (1+R)^N]/[(1+R)^N-1]
     }
 
 
+    public void onclaculate(View view) {
+
+
+        float loan = Float.valueOf(editTextloan.getText().toString());
+        numberofmonths = Float.valueOf(editTxtloanMonth.getText().toString());
+       x = 1+rate;
+       y = numberofmonths;
+      first =(float)  Math.pow(x,y);
+
+      y = numberofmonths-1;
+      second = (float)  Math.pow(x,y);
+
+       emi = ((loan * rate *first) /(second));
+        txtemi.setText(emi+"");
+
+
+    }
 }

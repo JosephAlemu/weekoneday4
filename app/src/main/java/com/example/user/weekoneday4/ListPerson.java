@@ -1,9 +1,11 @@
 package com.example.user.weekoneday4;
-
+import com.example.user.weekoneday4.CustomAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,13 +18,14 @@ public class ListPerson extends AppCompatActivity {
     private TextView tvSecond;
     ArrayList<Person> list ;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_person);
 
         Log.d(TAG, "onCreate: ");
 
-        tvSecond = findViewById(R.id.tvSecond);
+       // tvSecond = findViewById(R.id.tvSecond);
 
         String action = getIntent().getAction();
 
@@ -37,5 +40,12 @@ public class ListPerson extends AppCompatActivity {
 
         }
 
+        CustomAdapter adapter = new CustomAdapter(this, list);
+
+        ListView listView = (ListView) findViewById(R.id.list);
+        listView.setAdapter(adapter);
     }
+
+
+
 }

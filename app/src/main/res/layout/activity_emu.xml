@@ -63,4 +63,11 @@ tools:context="com.example.user.weekoneday4.emu">
         android:paddingRight="10dp"
         android:text="EMI" />
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onclaculate"
+        android:text="Calculate" />
+
 </LinearLayout>
