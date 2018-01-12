@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+    android:orientation="vertical"
+tools:context="com.example.user.weekoneday4.emu">
+
+<SeekBar
+    android:id="@+id/seekBar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
+    android:layout_marginTop="43dp" />
+
+<TextView
+    android:id="@+id/txtView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="60dp"
+    android:text="" />
+
+    <EditText
+        android:id="@+id/editTextloan"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+
+        android:text="5000" />
+
+    <TextView
+        android:id="@+id/txtloan"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+
+        android:text="Enter Loan Amount" />
+
+    <EditText
+        android:id="@+id/editTxtloanMonth"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+
+        android:inputType="textPersonName"
+        android:text="12" />
+
+    <TextView
+        android:id="@+id/txtnumMont"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+
+        android:text="Total Number of Months" />
+
+    <TextView
+        android:id="@+id/txtemi"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:paddingRight="10dp"
+        android:text="EMI" />
+
+</LinearLayout>
